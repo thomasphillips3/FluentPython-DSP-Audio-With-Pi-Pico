@@ -24,7 +24,7 @@ def sine_wave(amplitude, offset, frequency, sample_rate, duration):
         value = offset + amplitude * math.sin(2 * math.pi * frequency * t)
         duty = int((value / (offset + amplitude)) * 65535)
         yield duty
-        
+
 # Parameters for the sine wave
 sample_rate = 1000      # samples per second
 duration = 2            # duration in seconds
@@ -34,5 +34,6 @@ frequency = 2           # sine wave frequency in hz
 
 # Generate the sine wave using PWM
 for duty in sine_wave(amplitude, offset, frequency, sample_rate, duration):
+    print(f"Duty cycle: {duty}")  # Debugging output
     pwm.duty_u16(duty)
     time.sleep(1 / sample_rate) # wait for the next sample interval
