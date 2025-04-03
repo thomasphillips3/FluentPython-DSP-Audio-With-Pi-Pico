@@ -16,13 +16,13 @@ def sine_wave(amplitude, offset, frequency, sample_rate, duration):
     :param frequency: Frequency of the sine wave in Hertz.
     :param sample_rate: Number of samples per second.
     :param duration: Duration of the sine wave in seconds.
-    :yield: None, but sets the PWM duty cycle to approximate a sine wave.
+    :yield: int, the PWM duty cycle to approximate a sine wave.
     """ 
     num_samples = int(sample_rate * duration)
     for i in range(num_samples):
         t = i / sample_rate  # time in seconds
         value = offset + amplitude * math.sin(2 * math.pi * frequency * t)
-        duty = int((value / (offset + amplitude)) * 65535)
+        duty = int(((value - (offset - amplitude)) / (2 * amplitude)) * 65535)
         yield duty
 
 # Parameters for the sine wave
