@@ -22,7 +22,7 @@ def sine_wave(amplitude, offset, frequency, sample_rate, duration):
     for i in range(num_samples):
         t = i / sample_rate  # time in seconds
         value = offset + amplitude * math.sin(2 * math.pi * frequency * t)
-        duty = int((value / (offset + amplitude)) * 65535)
+        duty = int(((value - (offset - amplitude)) / (2 * amplitude)) * 65535)
         yield duty
 
 # Parameters for the sine wave
