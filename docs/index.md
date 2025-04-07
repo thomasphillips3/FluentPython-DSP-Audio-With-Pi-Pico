@@ -32,4 +32,3 @@ This curriculum is designed to deepen your understanding of Python by applying i
 - **Navigation:** Use the table of contents above to browse through modules and topics.
 - **Lesson Materials:** Each module file contains lesson notes and code examples.
 - **Tracking Progress:** Update this wiki with your notes, questions, or additional resources as you learn.
-- **Contribution:** Feel free to enhance this resource. See the [Contributing](contributing.md) page for guidelines.
